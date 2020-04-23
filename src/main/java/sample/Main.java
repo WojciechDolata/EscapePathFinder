@@ -1,18 +1,7 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import org.sat4j.core.VecInt;
-import org.sat4j.minisat.SolverFactory;
-import org.sat4j.specs.IProblem;
-import org.sat4j.specs.ISolver;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main extends Application {
 
@@ -53,10 +42,22 @@ public class Main extends Application {
         building.addRoom(false, false);
         building.addRoom(true, false);
         building.addRoom(false, true);
-        building.addConnection(0, 1);
-        building.addConnection(1, 2);
+        building.addRoom(true, true);
+        building.createConnection(0, 1);
+        building.createConnection(1, 2);
+        building.createConnection(2, 3);
+        building.createConnection(0, 3);
         building.print();
 
+        building.removeRoom(2);
+        building.removeConnection(0, 1);
+        building.updateRoom(0, true, true);
+        building.print();
+
+        building.addRoom(false, true);
+        building.createConnection(1, 4);
+        building.createConnection(0, 1);
+        building.print();
     }
 
 

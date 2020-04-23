@@ -16,6 +16,11 @@ public class Room {
         this.isDanger = danger;
     }
 
+    public void setExit(boolean exit)
+    {
+        this.isExit = exit;
+    }
+
     public void print()
     {
         System.out.println("Room " + id + ": isDanger: " + isDanger + ", isExit: " + isExit);

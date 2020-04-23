@@ -1,16 +1,40 @@
 package sample;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import java.util.*;
 
 public class Building {
-    private List<Room> rooms = new ArrayList<>();
+    private Map<Integer, Room> rooms = new HashMap<>();
     private Map<Integer, List<Integer>> neighbours = new HashMap<>();
+    private Integer buildingSize = 0;
 
     public Building(){
     }
 
     public void addRoom(boolean isDanger, boolean isExit){
-        rooms.add(new Room(rooms.size(), isDanger, isExit));
+        rooms.put(buildingSize, new Room(buildingSize, isDanger, isExit));
+        buildingSize++;
+    }
+
+    public void updateRoom(Integer id, boolean isDanger, boolean isExit){
+        rooms.get(id).setDanger(isDanger);
+        rooms.get(id).setExit(isExit);
+    }
+
+    public void removeRoom(Integer id){
+        rooms.remove(id);
+        neighbours.remove(id);
+
+        for (Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
+            Integer idx = entry.getValue().indexOf(id);
+
+            if(idx != -1){
+                List<Integer> updated = entry.getValue();
+                updated.remove(entry.getValue().indexOf(id));
+                neighbours.put(entry.getKey(), updated);
+            }
+        }
     }
 
     private void updateConnections(Integer room1, Integer room2){
@@ -25,21 +49,36 @@ public class Building {
         neighbours.put(room1, updated);
     }
 
-    public void addConnection(Integer room1, Integer room2){
+    private void updateRemoveConnections(Integer room1, Integer room2){
+        List<Integer> updated;
+
+        updated = neighbours.get(room1);
+        updated.remove(neighbours.get(room1).indexOf(room2));
+        neighbours.put(room1, updated);
+        }
+
+
+    public void createConnection(Integer room1, Integer room2){
         updateConnections(room1, room2);
         updateConnections(room2, room1);
     }
 
+    public void removeConnection(Integer room1, Integer room2){
+        updateRemoveConnections(room1, room2);
+        updateRemoveConnections(room2, room1);
+    }
+
     public void print(){
-        for (Room room : rooms)
+        for (Map.Entry<Integer, Room> entry : rooms.entrySet())
         {
-            room.print();
+            entry.getValue().print();
         }
-        System.out.println("\n");
 
         for (Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
             System.out.println("Room " + entry.getKey() + " is neighbours with " + entry.getValue());
         }
+
+        System.out.println("\n");
 
     }
 }
