@@ -12,6 +12,10 @@ public class Building {
     public Building(){
     }
 
+    public Map<Integer, Room> getRooms(){
+        return rooms;
+    }
+
     public void addRoom(boolean isDanger, boolean isExit){
         rooms.put(buildingSize, new Room(buildingSize, isDanger, isExit));
         buildingSize++;

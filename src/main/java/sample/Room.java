@@ -1,7 +1,7 @@
 package sample;
 
 public class Room {
-    private int id;
+    private Integer id;
     private boolean isDanger;
     private boolean isExit;
 
@@ -9,6 +9,17 @@ public class Room {
         this.id = id;
         this.isDanger = isDanger;
         this.isExit = isExit;
+    }
+
+    public Integer getId(){
+        return id;
+    }
+
+    public Integer getDanger(){
+        if(isDanger) {
+            return 1;
+        }
+        return -1;
     }
 
     public void setDanger(boolean danger)
