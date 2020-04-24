@@ -12,6 +12,10 @@ public class Building {
     public Building(){
     }
 
+    public Map<Integer, List<Integer>> getNeighbours(){
+        return neighbours;
+    }
+
     public Map<Integer, Room> getRooms(){
         return rooms;
     }

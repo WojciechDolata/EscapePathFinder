@@ -22,6 +22,10 @@ public class Room {
         return -1;
     }
 
+    public boolean getExit(){
+        return isExit;
+    }
+
     public void setDanger(boolean danger)
     {
         this.isDanger = danger;

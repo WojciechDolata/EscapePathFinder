@@ -13,14 +13,27 @@ public class Main extends Application {
         //primaryStage.show();
 
         Building building = new Building();
-        building.addRoom(false, false);
         building.addRoom(true, false);
+        building.addRoom(false, false);
+        building.addRoom(false, false);
+        building.addRoom(false, false);
         building.addRoom(false, true);
-        building.addRoom(true, true);
+        building.addRoom(false, false);
+        building.addRoom(false, false);
+        building.addRoom(false, false);
+        building.addRoom(false, false);
+        building.addRoom(false, true);
         building.createConnection(0, 1);
-        building.createConnection(1, 2);
-        building.createConnection(2, 3);
         building.createConnection(0, 3);
+        building.createConnection(1, 3);
+        building.createConnection(2, 3);
+        building.createConnection(5, 6);
+        building.createConnection(5, 3);
+        building.createConnection(6, 3);
+        building.createConnection(7, 3);
+        building.createConnection(7, 8);
+        building.createConnection(3, 9);
+        building.createConnection(3, 4);
         building.print();
 
         Evacuation plan = new Evacuation(building);
