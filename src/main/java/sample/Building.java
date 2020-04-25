@@ -77,11 +77,13 @@ public class Building {
     }
 
     public void print(){
+        System.out.println("Rooms: ");
         for (Map.Entry<Integer, Room> entry : rooms.entrySet())
         {
             entry.getValue().print();
         }
 
+        System.out.println("\nConnections:");
         for (Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
             System.out.println("Room " + entry.getKey() + " is neighbours with " + entry.getValue());
         }
