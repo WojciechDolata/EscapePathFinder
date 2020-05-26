@@ -5,8 +5,6 @@ import org.sat4j.minisat.SolverFactory;
 import org.sat4j.specs.IProblem;
 import org.sat4j.specs.ISolver;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -59,21 +57,21 @@ public class EvacSolver {
             return;
         }
 
-        for (Map.Entry<Integer, Room> entry : formula.getBuilding().getRooms().entrySet()) {
+        for (Map.Entry<Integer, Area> entry : formula.getBuilding().getAreas().entrySet()) {
             Integer roomId = entry.getKey();
 
-            if(formula.getBuilding().getRooms().get(roomId).getExit()){
+            if(formula.getBuilding().getAreas().get(roomId).containsExit()){
                 continue;
             }
 
-            System.out.print("Room "+roomId+": ");
+            System.out.print("Area "+roomId+": ");
             if(problem.model(vars.get(formula.getVarNameStay(roomId)))){
                 System.out.println("stay");
             }
             else{
                 for (Integer neighId : formula.getBuilding().getNeighbours().get(entry.getKey())) {
                     if(problem.model(vars.get(formula.getVarNameMove(roomId, neighId)))){
-                        System.out.println("move to room "+neighId);
+                        System.out.println("move to area "+neighId);
                     }
                 }
             }

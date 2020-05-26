@@ -1,11 +1,9 @@
 package sample;
 
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.util.*;
 
 public class Building {
-    private Map<Integer, Room> rooms = new HashMap<>();
+    private Map<Integer, Area> areas = new HashMap<>();
     private Map<Integer, List<Integer>> neighbours = new HashMap<>();
     private Integer buildingSize = 0;
 
@@ -16,22 +14,22 @@ public class Building {
         return neighbours;
     }
 
-    public Map<Integer, Room> getRooms(){
-        return rooms;
+    public Map<Integer, Area> getAreas(){
+        return areas;
     }
 
-    public void addRoom(boolean isDanger, boolean isExit){
-        rooms.put(buildingSize, new Room(buildingSize, isDanger, isExit));
+    public void addArea(boolean isInDanger, boolean containsExit){
+        areas.put(buildingSize, new Area(buildingSize, isInDanger, containsExit));
         buildingSize++;
     }
 
-    public void updateRoom(Integer id, boolean isDanger, boolean isExit){
-        rooms.get(id).setDanger(isDanger);
-        rooms.get(id).setExit(isExit);
+    public void updateArea(Integer id, boolean isInDanger, boolean containsExit){
+        areas.get(id).setIsInDanger(isInDanger);
+        areas.get(id).setContainsExit(containsExit);
     }
 
-    public void removeRoom(Integer id){
-        rooms.remove(id);
+    public void removeArea(Integer id){
+        areas.remove(id);
         neighbours.remove(id);
 
         for (Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
@@ -45,47 +43,47 @@ public class Building {
         }
     }
 
-    private void updateConnections(Integer room1, Integer room2){
+    private void updateConnections(Integer area1, Integer area2){
         List<Integer> updated;
-        if(neighbours.containsKey(room1)){
-            updated = neighbours.get(room1);
+        if(neighbours.containsKey(area1)){
+            updated = neighbours.get(area1);
         }
         else{
             updated = new ArrayList<>();
         }
-        updated.add(room2);
-        neighbours.put(room1, updated);
+        updated.add(area2);
+        neighbours.put(area1, updated);
     }
 
-    private void updateRemoveConnections(Integer room1, Integer room2){
+    private void updateRemoveConnections(Integer area1, Integer area2){
         List<Integer> updated;
 
-        updated = neighbours.get(room1);
-        updated.remove(neighbours.get(room1).indexOf(room2));
-        neighbours.put(room1, updated);
+        updated = neighbours.get(area1);
+        updated.remove(neighbours.get(area1).indexOf(area2));
+        neighbours.put(area1, updated);
         }
 
 
-    public void createConnection(Integer room1, Integer room2){
-        updateConnections(room1, room2);
-        updateConnections(room2, room1);
+    public void createConnection(Integer area1, Integer area2){
+        updateConnections(area1, area2);
+        updateConnections(area2, area1);
     }
 
-    public void removeConnection(Integer room1, Integer room2){
-        updateRemoveConnections(room1, room2);
-        updateRemoveConnections(room2, room1);
+    public void removeConnection(Integer area1, Integer area2){
+        updateRemoveConnections(area1, area2);
+        updateRemoveConnections(area2, area1);
     }
 
     public void print(){
-        System.out.println("Rooms: ");
-        for (Map.Entry<Integer, Room> entry : rooms.entrySet())
+        System.out.println("Areas: ");
+        for (Map.Entry<Integer, Area> entry : areas.entrySet())
         {
             entry.getValue().print();
         }
 
         System.out.println("\nConnections:");
         for (Map.Entry<Integer, List<Integer>> entry : neighbours.entrySet()) {
-            System.out.println("Room " + entry.getKey() + " is neighbours with " + entry.getValue());
+            System.out.println("Area " + entry.getKey() + " is neighbours with " + entry.getValue());
         }
 
         System.out.println("\n");
