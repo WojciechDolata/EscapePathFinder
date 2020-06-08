@@ -23,7 +23,7 @@ public class EscapeApp extends Application {
     private EvacSolver evacSolver;
 
     @FXML
-    private Label formulaLabel, area0Label, area1Label, area2Label, area3Label, area4Label, area5Label, area6Label, area7Label, area8Label, area9Label, area10Label, area11Label, area12Label, area13Label, area14Label, area15Label, area16Label, area17Label, area18Label, area19Label, area20Label, area21Label, area22Label, area23Label, area24Label, area25Label, area26Label, area27Label;
+    private Label area0Label, area1Label, area2Label, area3Label, area4Label, area5Label, area6Label, area7Label, area8Label, area9Label, area10Label, area11Label, area12Label, area13Label, area14Label, area15Label, area16Label, area17Label, area18Label, area19Label, area20Label, area21Label, area22Label, area23Label, area24Label, area25Label, area26Label, area27Label;
 
     private List<Map<String, String>> allActions = new ArrayList<>();
 
@@ -127,7 +127,6 @@ public class EscapeApp extends Application {
         evacSolver = new EvacSolver(formula);
         evacSolver.solve();
         evacSolver.printEvacPlan();
-        formulaLabel.setText("generated");
         setSigns();
     }
 
@@ -139,10 +138,11 @@ public class EscapeApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getClassLoader().getResource("sample.fxml"));
-        Scene scene = new Scene(root, 1000, 600);
+        Scene scene = new Scene(root, 800, 600);
 
-        stage.setTitle("Evacuation App");
+        stage.setTitle("Adaptacyjny model ewakuacji");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
         //this.stage = stage;
