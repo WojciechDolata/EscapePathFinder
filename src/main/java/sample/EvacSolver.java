@@ -67,11 +67,13 @@ public class EvacSolver {
             System.out.print("Area "+roomId+": ");
             if(problem.model(vars.get(formula.getVarNameStay(roomId)))){
                 System.out.println("stay");
+                formula.getBuilding().getAreas().get(roomId).setAction("S");
             }
             else{
                 for (Integer neighId : formula.getBuilding().getNeighbours().get(entry.getKey())) {
                     if(problem.model(vars.get(formula.getVarNameMove(roomId, neighId)))){
                         System.out.println("move to area "+neighId);
+                        formula.getBuilding().getAreas().get(roomId).setAction(neighId.toString());
                     }
                 }
             }

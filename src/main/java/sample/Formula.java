@@ -205,6 +205,38 @@ public class Formula {
         }
     }
 
+    public String get(){
+        String form = "\nFormula: ";
+        for(int j=0; j<clauses.size(); j++){
+            int[] clause = clauses.get(j);
+
+            if(j != 0){
+                form += "\u2227 (";
+            }
+            else{
+                form += "(";
+            }
+
+            for(int i=0; i < clause.length; i++){
+                if(clause[i] < 0){
+                    form += "~";
+                }
+                if(i != clause.length-1){
+                    form += reversedVars.get(java.lang.Math.abs(clause[i])) + " \u2228 ";
+                }
+                else{
+                    form += reversedVars.get(java.lang.Math.abs(clause[i]));
+                }
+
+            }
+            form += ")\n";
+        }
+        form += "\n";
+
+        return form;
+    }
+
+
     public void print(){
         //System.out.println("Vars: ");
         //System.out.println(vars);

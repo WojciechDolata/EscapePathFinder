@@ -4,6 +4,7 @@ public class Area {
     private Integer id;
     private boolean isInDanger;
     private boolean containsExit;
+    private String action = "E";
 
     public Area(int id, boolean isInDanger, boolean containsExit) {
         this.id = id;
@@ -35,6 +36,10 @@ public class Area {
     {
         this.containsExit = containsExit;
     }
+
+    public void setAction(String action){this.action = action;}
+
+    public String getAction(){return action;}
 
     public void print()
     {
