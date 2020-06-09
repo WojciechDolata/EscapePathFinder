@@ -16,7 +16,7 @@
       <ButtonBar prefHeight="55.0" prefWidth="290.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="15.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#generateFormula" text="Wygeneruj plan" />
-            <Button mnemonicParsing="false" text="Reset" />
+            <Button mnemonicParsing="false" onAction="#reset" text="Reset" />
         </buttons>
       </ButtonBar>
       <GridPane alignment="CENTER" layoutX="79.0" layoutY="89.0" prefHeight="401.0" prefWidth="640.0">
@@ -38,102 +38,102 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <ImageView fx:id="area_0" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@rooms/room1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="3">
+            <ImageView fx:id="area_8" fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room6.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2">
+            <ImageView fx:id="area_2" fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2">
                <image>
                   <Image url="@rooms/room3.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="110.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <ImageView fx:id="area_5" fitHeight="80.0" fitWidth="80.0" layoutX="110.0" layoutY="10.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <image>
                   <Image url="@rooms/room4.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ImageView fx:id="area_12" fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="60.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <ImageView fx:id="area_13" fitHeight="80.0" fitWidth="80.0" layoutX="60.0" layoutY="207.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="110.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <ImageView fx:id="area_23" fitHeight="80.0" fitWidth="80.0" layoutX="110.0" layoutY="207.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <ImageView fx:id="area_24" fitHeight="80.0" fitWidth="80.0" layoutX="160.0" layoutY="207.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="210.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="4">
+            <ImageView fx:id="area_25" fitHeight="80.0" fitWidth="80.0" layoutX="210.0" layoutY="207.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="261.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="4">
+            <ImageView fx:id="area_26" fitHeight="80.0" fitWidth="80.0" layoutX="261.0" layoutY="207.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <ImageView fx:id="area_7" fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="9.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room10.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="108.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <ImageView fx:id="area_14" fitHeight="80.0" fitWidth="80.0" layoutX="108.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room11.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="157.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <ImageView fx:id="area_16" fitHeight="80.0" fitWidth="80.0" layoutX="157.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room13.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="4">
+            <ImageView fx:id="area_11" fitHeight="80.0" fitWidth="80.0" layoutX="10.0" layoutY="153.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room7.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="157.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <ImageView fx:id="area_15" fitHeight="80.0" fitWidth="80.0" layoutX="157.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room12.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="304.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="7" GridPane.rowIndex="4">
+            <ImageView fx:id="area_27" fitHeight="80.0" fitWidth="80.0" layoutX="304.0" layoutY="201.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="7" GridPane.rowIndex="4">
                <image>
                   <Image url="@rooms/room8.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="206.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1">
+            <ImageView fx:id="area_1" fitHeight="80.0" fitWidth="80.0" layoutX="206.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1">
                <image>
                   <Image url="@rooms/room2.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="160.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <ImageView fx:id="area_3" fitHeight="160.0" fitWidth="80.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <image>
                   <Image url="@rooms/room5.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="160.0" layoutX="255.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="2">
+            <ImageView fx:id="area_17" fitHeight="80.0" fitWidth="160.0" layoutX="255.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room14.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="108.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <ImageView fx:id="area_9" fitHeight="80.0" fitWidth="80.0" layoutX="108.0" layoutY="105.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
@@ -198,7 +198,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="area15Label" layoutX="160.0" layoutY="126.0" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Label fx:id="area15Label" layoutX="160.0" layoutY="126.0" textAlignment="CENTER" textFill="LIME" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font>
@@ -228,7 +228,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label fx:id="area1Label" layoutX="27.0" layoutY="27.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Label fx:id="area1Label" layoutX="27.0" layoutY="27.0" textAlignment="CENTER" textFill="LIME" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font>
@@ -238,42 +238,42 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ImageView fx:id="area_4" fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ImageView fx:id="area_6" fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="90.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <ImageView fx:id="area_10" fitHeight="80.0" fitWidth="80.0" layoutX="90.0" layoutY="170.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="170.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <ImageView fx:id="area_18" fitHeight="80.0" fitWidth="80.0" layoutX="170.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="250.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <ImageView fx:id="area_19" fitHeight="80.0" fitWidth="80.0" layoutX="250.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="4" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="330.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="3">
+            <ImageView fx:id="area_20" fitHeight="80.0" fitWidth="80.0" layoutX="330.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="5" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="410.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="3">
+            <ImageView fx:id="area_21" fitHeight="80.0" fitWidth="80.0" layoutX="410.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="6" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room16.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="491.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="7" GridPane.rowIndex="3">
+            <ImageView fx:id="area_22" fitHeight="80.0" fitWidth="80.0" layoutX="491.0" layoutY="250.0" onMouseClicked="#toggleDanger" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="7" GridPane.rowIndex="3">
                <image>
                   <Image url="@rooms/room19.png" />
                </image>

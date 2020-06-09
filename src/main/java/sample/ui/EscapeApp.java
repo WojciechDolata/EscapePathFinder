@@ -7,9 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import sample.*;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +29,7 @@ public class EscapeApp extends Application {
     private Label area0Label, area1Label, area2Label, area3Label, area4Label, area5Label, area6Label, area7Label, area8Label, area9Label, area10Label, area11Label, area12Label, area13Label, area14Label, area15Label, area16Label, area17Label, area18Label, area19Label, area20Label, area21Label, area22Label, area23Label, area24Label, area25Label, area26Label, area27Label;
 
     private List<Map<String, String>> allActions = new ArrayList<>();
+    private Map<Integer, Label> labelVars = new HashMap<>();
 
     private void initSigns(){
         allActions.add(Map.of("1", "→", "S", "S"));
@@ -56,71 +60,51 @@ public class EscapeApp extends Application {
         allActions.add(Map.of("20", "↑", "S", "S"));
         allActions.add(Map.of("21", "↑", "S", "S"));
         allActions.add(Map.of("22", "↑", "S", "S"));
-    }
+
+        labelVars.put(0, area0Label);
+        labelVars.put(1, area1Label);
+        labelVars.put(2, area2Label);
+        labelVars.put(3, area3Label);
+        labelVars.put(4, area4Label);
+        labelVars.put(5, area5Label);
+        labelVars.put(6, area6Label);
+        labelVars.put(7, area7Label);
+        labelVars.put(8, area8Label);
+        labelVars.put(9, area9Label);
+        labelVars.put(10, area10Label);
+        labelVars.put(11, area11Label);
+        labelVars.put(12, area12Label);
+        labelVars.put(13, area13Label);
+        labelVars.put(14, area14Label);
+        labelVars.put(15, area15Label);
+        labelVars.put(16, area16Label);
+        labelVars.put(17, area17Label);
+        labelVars.put(18, area18Label);
+        labelVars.put(19, area19Label);
+        labelVars.put(20, area20Label);
+        labelVars.put(21, area21Label);
+        labelVars.put(22, area22Label);
+        labelVars.put(23, area23Label);
+        labelVars.put(24, area24Label);
+        labelVars.put(25, area25Label);
+        labelVars.put(26, area26Label);
+        labelVars.put(27, area27Label);
+
+     }
 
     private void setSigns(){
-        int i = 0;
 
-        area0Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area1Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area2Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area3Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area4Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area5Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area6Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area7Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area8Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area9Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area10Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area11Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area12Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area13Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area14Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area15Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area16Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area17Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area18Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area19Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area20Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area21Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area22Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area23Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area24Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area25Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area26Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
-        area27Label.setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
-        i+= 1;
+        for(int i=0; i<28; i++){
+            labelVars.get(i).setText(allActions.get(i).get(building.getAreas().get(i).getAction()));
+
+            if(building.getAreas().get(i).isInDanger() != 1 && !building.getAreas().get(i).containsExit()) {
+                labelVars.get(i).setTextFill(Color.web("#000000", 1));
+            }
+        }
     }
 
     @FXML
-    private void generateFormula(ActionEvent event) throws Exception {
+    private void generateFormula() throws Exception {
         formula = new Formula(building);
         formula.generate();
         formula.print();
@@ -130,8 +114,38 @@ public class EscapeApp extends Application {
         setSigns();
     }
 
-    public void initialize() {
+    @FXML
+    private void reset() throws Exception {
+        for(int i=0; i<28; i++) {
+            building.getAreas().get(i).setIsInDanger(false);
+        }
+
         initSigns();
+        generateFormula();
+    }
+
+    @FXML
+    private void toggleDanger(MouseEvent event){
+        Integer clickedId = Integer.parseInt(event.getPickResult().getIntersectedNode().getId().split("_")[1]);
+        String labelVar = "area" + clickedId + "Label";
+
+        if(building.getAreas().get(clickedId).isInDanger() == 1){
+            labelVars.get(clickedId).setTextFill(Color.web("#000000", 1));
+            building.getAreas().get(clickedId).setIsInDanger(false);
+            System.out.println(clickedId + " - no danger");
+        }
+        else{
+            labelVars.get(clickedId).setTextFill(Color.web("#ff0000", 1));
+            building.getAreas().get(clickedId).setIsInDanger(true);
+            System.out.println(clickedId + " - danger");
+        }
+
+        System.out.println(labelVar);
+    }
+
+    public void initialize() throws Exception {
+        initSigns();
+        generateFormula();
     }
 
     @Override
