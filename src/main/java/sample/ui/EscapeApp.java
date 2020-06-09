@@ -125,7 +125,7 @@ public class EscapeApp extends Application {
     }
 
     @FXML
-    private void toggleDanger(MouseEvent event){
+    private void toggleDanger(MouseEvent event) throws Exception{
         Integer clickedId = Integer.parseInt(event.getPickResult().getIntersectedNode().getId().split("_")[1]);
         String labelVar = "area" + clickedId + "Label";
 
@@ -141,6 +141,7 @@ public class EscapeApp extends Application {
         }
 
         System.out.println(labelVar);
+        generateFormula();
     }
 
     public void initialize() throws Exception {
