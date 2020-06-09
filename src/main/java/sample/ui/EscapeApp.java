@@ -153,7 +153,7 @@ public class EscapeApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getClassLoader().getResource("sample.fxml"));
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 800, 630);
 
         stage.setTitle("Adaptacyjny model ewakuacji");
         stage.setScene(scene);
